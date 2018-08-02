@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->float('products_amount');
             $table->string('address');
-            $table->string('note');
+            $table->string('note')->nullable();
             $table->unsignedInteger('status_id');
             $table->unsignedInteger('user_id');
 //            $table->foreign('user_id')->references('id')->on('users');

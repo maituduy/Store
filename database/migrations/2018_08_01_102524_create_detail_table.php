@@ -18,6 +18,7 @@ class CreateDetailTable extends Migration
             $table->unsignedInteger('product_id');
             $table->unsignedInteger('order_id');
             $table->string('quantity')->default(1);
+            $table->float('price');
 //            $table->foreign('product_id')->references('id')->on('products');
 //            $table->foreign('order_id')->references('id')->on('orders');
             $table->timestamps();

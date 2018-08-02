@@ -29,7 +29,7 @@ class CreateProductsTable extends Migration
             $table->string('camera')->nullable();
             $table->string('battery')->nullable();
             $table->unsignedInteger('category_id');
-            $table->tinyInteger('is_acctive')->default(0);
+            $table->tinyInteger('is_active')->default(0);
 //            $table->foreign('category_id')->refrences('id')->on('categories');
             $table->timestamps();
         });

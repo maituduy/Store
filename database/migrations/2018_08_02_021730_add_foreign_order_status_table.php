@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddForeignOrdersTable extends Migration
+class AddForeignOrderStatusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class AddForeignOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::table('orders', function (Blueprint $table) {
+        Schema::table('order_status', function (Blueprint $table) {
             //
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('status_id')->references('id')->on('statuses');
+            $table->foreign('order_id')->references('id')->on('orders');
         });
     }
 
@@ -26,9 +27,9 @@ class AddForeignOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::table('orders', function (Blueprint $table) {
+        Schema::table('order_status', function (Blueprint $table) {
             //
-            $table->dropForeign(['user_id']);
+            $table->dropForeign(['status_id', 'order_id']);
         });
     }
 }
